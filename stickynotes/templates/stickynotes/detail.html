@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h2>{{ stickynote.name }}</h2>
+
+    <p>
+        {{ stickynote.description }}
+    </p>
+
+    <p>
+        {{ stickynote.sets }}
+    </p>
+
+    <a href="{% url 'stickynotes' %}">back</a>
+</section>
+{% endblock %}

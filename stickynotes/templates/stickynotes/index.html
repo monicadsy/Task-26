@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h2 >{{ page_title }}</h2>
+
+    <ul class="text-sm text-black font-bold underline">
+        {% for stickynote in stickynotes %}
+        <li>
+            <div>
+                <a href="{% url 'stickynote' pk=stickynote.pk %}">{{ stickynote.name }}</a>
+                <p class="text-slate-200" >{{ post.creator }}</p>
+                <a href="{% url 'delete_stickynote' pk=stickynote.pk %}">delete</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_stickynote' %}" class="text-black">Add New</a>
+    
+</section>
+{% endblock %}
